@@ -1,6 +1,7 @@
 {% set name = "ndd" %}
-{% set version = "1.10.5" %}
-{% set sha256 = "884c2dedefd48b4cb85be379dce0b70d6e59dc68638ea2d87564efdcb5bee5cc" %}
+{% set version = "1.10.6" %}
+{% set sha256 = "d08d31f297531865f70a130986f0b3d02a9242acbe2c240825f336c0a417a117" %}
+
 
 package:
   name: {{ name|lower }}
@@ -11,7 +12,7 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1
+  number: 0
   skip: True  # [py<35]
   script: "{{ PYTHON }} -m pip install . -vv"
 
