@@ -23,10 +23,10 @@ requirements:
   host:
     - pip
     - python
-    - numpy >=1.13
+    - numpy
   run:
     - python
-    - numpy >=1.13
+    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
