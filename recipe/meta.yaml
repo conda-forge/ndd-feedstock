@@ -1,6 +1,5 @@
 {% set name = "ndd" %}
 {% set version = "1.10.6" %}
-{% set sha256 = "d08d31f297531865f70a130986f0b3d02a9242acbe2c240825f336c0a417a117" %}
 
 
 package:
@@ -9,10 +8,10 @@ package:
 
 source:
   url: https://github.com/simomarsili/{{ name }}/archive/v{{ version }}.tar.gz
-  sha256: {{ sha256 }}
+  sha256: d08d31f297531865f70a130986f0b3d02a9242acbe2c240825f336c0a417a117
 
 build:
-  number: 0
+  number: 1
   skip: True  # [py<35]
   script: "{{ PYTHON }} -m pip install . -vv"
 
@@ -23,10 +22,10 @@ requirements:
   host:
     - pip
     - python
-    - numpy >=1.13
+    - numpy
   run:
     - python
-    - numpy >=1.13
+    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
