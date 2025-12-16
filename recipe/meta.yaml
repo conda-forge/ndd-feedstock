@@ -12,14 +12,15 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [py<35]
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   build:
-    - {{ compiler('fortran') }}              # [not win]
-    - {{ compiler('m2w64_fortran') }}        # [win]
+    - {{ stdlib("c") }}
+    - {{ compiler("c") }}
+    - {{ compiler("fortran") }}
   host:
     - pip
     - python
